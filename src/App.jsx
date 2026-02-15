@@ -1,38 +1,35 @@
-
-import LoginBtn  from './Components/LoginBtn';
-import LogoutBtn from './Components/LogoutBtn';
-import './App.css'
-import { useState } from 'react';
-
-
+import { useState } from "react";
+import LoginBtn from "./Components/LoginBtn";
+import LogoutBtn from "./Components/LogoutBtn";
+import Status from "./Components/Status";
+import "./App.css";
 
 function App() {
-  
-  const [isLogedin ] = useState('') ;
 
-  // 2.
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
-    // <div>
-    // {isLogedin ? <LogoutBtn/> : <LoginBtn />}
-    // </div>
-    <div>
-      {isLogedin ? <LogoutBtn/> : <LoginBtn/>}
+  <div className="app">
+    <div className="card">
+      <Status isLoggedIn={isLoggedIn} />
+
+      {isLoggedIn ? (
+        <LogoutBtn onLogout={handleLogout} />
+      ) : (
+        <LoginBtn onLogin={handleLogin} />
+      )}
     </div>
-  
-  )
-  // 1.
-  // if(isLogedin){
-  //   return(
-  //     < LogoutBtn/>
-      
-  //   )
-  // }
-  // else{
-  //   return(
-  //     <LoginBtn/>
-  //   )
-  // }
+  </div>
+);
 
 }
 
-export default App
+export default App;

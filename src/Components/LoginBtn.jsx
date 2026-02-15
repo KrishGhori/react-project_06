@@ -1,11 +1,9 @@
-import React from 'react'
-
-const Login = () => {
+const LoginBtn = ({ onLogin }) => {
   return (
-    
-      <button>Login</button>
-    
-  )
-}
+    <button onClick={onLogin}>
+      Login
+    </button>
+  );
+};
 
-export default Login
+export default LoginBtn;
