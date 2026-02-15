@@ -1,6 +1,6 @@
 const LoginBtn = ({ onLogin }) => {
   return (
-    <button onClick={onLogin}>
+    <button className="login-btn" onClick={onLogin}>
       Login
     </button>
   );

@@ -8,28 +8,38 @@ function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
+  const handleLogin = () => setIsLoggedIn(true);
+  const handleLogout = () => setIsLoggedIn(false);
 
   return (
-  <div className="app">
-    <div className="card">
-      <Status isLoggedIn={isLoggedIn} />
+    <div className="app">
 
-      {isLoggedIn ? (
-        <LogoutBtn onLogout={handleLogout} />
-      ) : (
-        <LoginBtn onLogin={handleLogin} />
-      )}
+      <header className="navbar">
+        <h1>Auth Dashboard</h1>
+      </header>
+
+      <main className="main">
+
+        <div className="card">
+
+          <div className="status-section">
+            <Status isLoggedIn={isLoggedIn} />
+          </div>
+
+          <div className="button-section">
+            {isLoggedIn ? (
+              <LogoutBtn onLogout={handleLogout} />
+            ) : (
+              <LoginBtn onLogin={handleLogin} />
+            )}
+          </div>
+
+        </div>
+
+      </main>
+
     </div>
-  </div>
-);
-
+  );
 }
 
 export default App;

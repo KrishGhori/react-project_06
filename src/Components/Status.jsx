@@ -1,8 +1,8 @@
 const Status = ({ isLoggedIn }) => {
   return (
-    <h2>
-      {isLoggedIn ? "User is Logged In" : "User is Logged Out"}
-    </h2>
+    <p className={isLoggedIn ? "status success" : "status danger"}>
+      {isLoggedIn ? "You are logged in" : "You are logged out"}
+    </p>
   );
 };
 
