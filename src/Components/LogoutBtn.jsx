@@ -1,6 +1,6 @@
 const LogoutBtn = ({ onLogout }) => {
   return (
-    <button onClick={onLogout}>
+    <button className="logout-btn" onClick={onLogout}>
       Logout
     </button>
   );
